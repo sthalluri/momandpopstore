@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-lg-4">
+        <ul class="list-group">
+            {{#each model}}
+            <li class="list-group-item">
+                {{#link-to 'inventorysearch' name}}
+                {{name}}
+                {{/link-to}}
+                <span class="badge text-right">{{id}}</span>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class="col-lg-8">
+        <div class="row">
+            {{#each model}}
+            <div class="col-lg-4">
+                <div class="panel panel-default" >
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{name}}</h3>
+                    </div>
+                    <div class="panel-body " style="min-height: 300px; max-height: 300px">
+                        {{category}} : {{description}}
+                    </div>
+                    <div class="panel-footer">
+                        <button {{action 'viewDetails' id }}  class="btn btn-default">View Details</button>
+                        <button {{action 'addToCart' this }}  class="btn btn-primary">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

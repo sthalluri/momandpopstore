@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Your Cart</div>
+    <div class="panel-body">
+        <p>We will reserve these items for you to pickup shortly.</p>
+
+        <!-- Table -->
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Item</th>
+                <th class="text-right">Quantity</th>
+                <th class="text-right">Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each cartItems}}
+            <tr>
+                <td>{{cartItems}} <br/>{{name}}</td>
+                <td class="text-right">{{quantity}}</td>
+                <td class="text-right">{{price}}</td>
+            </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="panel-footer text-right">
+        <button {{action 'inventorysearch' }}  class="btn btn-default">Shop More</button>
+        <button {{action 'checkout' this }}  class="btn btn-primary">Checkout</button>
+    </div>
+</div>

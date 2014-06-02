@@ -1,0 +1,49 @@
+
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: #333;
+    background: #EBEBEB;
+    margin: 0;
+}
+
+h1 {
+    font-family: LibelSuitRegular, Arial, sans-serif;
+    font-size: 32px;
+    position: relative;
+    color: gray;
+    margin-left: 20px;
+}
+
+h2 {
+    font-family: LibelSuitRegular, Arial, sans-serif;
+    font-size: 32px;
+    position: relative;
+    color: #e1a836;
+    margin-left: 60px;
+}
+
+.breadcrumb{
+    padding-left: 30px;
+}
+
+#headerArea {
+    background: #a4bec1;
+    color: #E4F0F5;
+}
+
+#headerArea li a {
+    color: #E4F0F5;
+    line-height: 55px;
+}
+
+#headerArea li a:hover {
+    color: #7D9399;
+    font-weight: 600;
+}
+
+#mainArea {
+    padding: 10px;
+}

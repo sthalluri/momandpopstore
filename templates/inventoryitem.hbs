@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">{{name}}</h2>
+    </div>
+    <div class="panel-body">
+        <p>{{description}}</p>
+    </div>
+
+    <div class="panel-footer text-right">
+        <button {{action 'inventorysearch' }}  class="btn btn-default">Shop More</button>
+        <button {{action 'checkout' this }}  class="btn btn-primary">Add to Cart</button>
+    </div>
+</div>
