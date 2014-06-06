@@ -1,8 +1,8 @@
 App.HomeController = Ember.ArrayController.extend({
     // the initial value of the `search` property
-    search: '',
-    actions: {
-        query: function() {
+    search:'',
+    actions:{
+        query:function () {
 
             // the current value of the text field
             var query = this.get('search');
@@ -10,7 +10,7 @@ App.HomeController = Ember.ArrayController.extend({
 
             // Transition to a route based on a parameter
             // Second parameter is the model object
-            this.transitionToRoute('/inventorysearch/'+query);
+            this.transitionToRoute('/inventorysearch/' + query);
         }
     }
 });

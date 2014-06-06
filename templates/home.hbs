@@ -1,8 +1,18 @@
-<div class="row">
-    <div class="col-lg-4">
-        {{input type="text" class="form-control col-lg-8 " placeholder="Search for Wine " value=search action="query"}}
+<div class="well">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="input-group">
+                {{input type="text" class="form-control col-lg-8 " placeholder="Search for Wine " value=search
+                action="query"}}
+            <span class="input-group-btn">
+                <button class="btn btn-default btn-danger " type="button"><i class="fa fa-search "></i></button>
+            </span>
+            </div>
+        </div>
     </div>
 </div>
+
+
 <br/>
 <div class="row">
     <div class="col-lg-4">
@@ -17,7 +27,6 @@
             {{/each}}
         </ul>
     </div>
-
     <div class="col-lg-8">
         {{outlet}}
     </div>
@@ -29,6 +38,7 @@
         <div class="alert alert-dismissable alert-warning">
             <button type="button" class="close" data-dismiss="alert">×</button>
             <h4>Special Offers!</h4>
+
             <p> Buy 4 wines and get a 5th one for free <a href="#" class="alert-link"> Checkout Today</a>.</p>
         </div>
     </div>

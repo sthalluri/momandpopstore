@@ -1,19 +1,19 @@
 App.CartController = Ember.ArrayController.extend({
     // the initial value of the `search` property
-    cartItems: [],
-    actions: {
-        addToCart: function(item) {
+    cartItems:[],
+    actions:{
+        addToCart:function (item) {
             this.cartItems.push({
-                id: item.get('id'),
-                name: item.get('name')
+                id:item.get('id'),
+                name:item.get('name')
             });
         },
 
-        removeFromCart : function(id){
+        removeFromCart:function (id) {
             this.cartItems.pop();
         },
 
-        checkout : function(){
+        checkout:function () {
 
             //Create an order and send it to the server
 
@@ -24,23 +24,23 @@ App.CartController = Ember.ArrayController.extend({
         }
     },
 
-    addItemToCart : function(item) {
+    addItemToCart:function (item) {
         this.cartItems.push({
-            id: item.id,
-            name: item.name,
-            quantity : item.quantity,
-            price : item.price
+            id:item.id,
+            name:item.name,
+            quantity:item.quantity,
+            price:item.price
         });
         this.cartUpdated();
     },
 
-    clearCart : function(){
+    clearCart:function () {
         // Cant update the bound variables directly
-        this.set('cartItems',[]);
+        this.set('cartItems', []);
         this.cartUpdated();
     },
 
-    cartUpdated : function(){
+    cartUpdated:function () {
         $('#cartCountSpan').text(this.cartItems.length);
     }
 });

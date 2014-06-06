@@ -1,4 +1,5 @@
 
+/* Nice color with red #2babcf */
 
 body {
     font-family: Helvetica, Arial, sans-serif;
@@ -46,4 +47,38 @@ h2 {
 
 #mainArea {
     padding: 10px;
+}
+
+.shop-product {
+    margin: 10px 0 20px;
+    text-align: center;
+}
+
+.shop-product.featured:before {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    content: "\f0a3";
+    font-family: FontAwesome;
+    font-size: 30px;
+    color: #ed3e49;
+}
+
+.shop-product.featured:after {
+    position: absolute;
+    top: 13px;
+    left: 19px;
+    content: "New";
+    font-weight: 400;
+    font-size: 10px;
+    color: white;
+}
+
+.btn-blue {
+    background-color: #2babcf;
+    background-image: -webkit-linear-gradient(top, #45b8d8 0%, #2babcf 100%);
+    background-image: -moz-linear-gradient(top, #45b8d8 0%, #2babcf 100%);
+    background-image: -o-linear-gradient(top, #45b8d8 0%, #2babcf 100%);
+    background-image: linear-gradient(top, #45b8d8 0%, #2babcf 100%);
+    border-color: #2288a5;
 }
