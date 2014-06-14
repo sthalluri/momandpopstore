@@ -25,7 +25,6 @@
             {{/each}}
         </ul>
     </div>
-
     <div class="col-lg-8">
         <div class="row">
             {{#each model}}
@@ -34,10 +33,12 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">{{name}}</h3>
                     </div>
-                    <div class="panel-body " style="min-height: 300px; max-height: 300px">
+                    <div class="panel-body panel-product" >
                         <div class="shop-product">
                             <a href="shop-item.html"><img src="http://7.pdvop2sz.z8.ru/paperclip/1.0/img/macbook.png" class="img-responsive" alt="..."></a>
-                            <a href="shop-item.html"><h5 class="primary-font ">Product #2</h5></a>
+                            {{#link-to 'inventoryitem' id}}
+                                <h5 class="primary-font ">{{name}}</h5>
+                            {{/link-to}}
                             <p class="text-muted">
                                 {{name}} : Short Description Here
                             </p>

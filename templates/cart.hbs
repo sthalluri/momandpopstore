@@ -2,29 +2,40 @@
     <!-- Default panel contents -->
     <div class="panel-heading">Your Cart</div>
     <div class="panel-body">
-        <p>We will reserve these items for you to pickup shortly.</p>
-
-        <!-- Table -->
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Item</th>
-                <th class="text-right">Quantity</th>
-                <th class="text-right">Price</th>
-            </tr>
-            </thead>
-            <tbody>
-            {{#each cartItems}}
-            <tr>
-                <td>{{cartItems}} <br/>{{name}}</td>
-                <td class="text-right">{{quantity}}</td>
-                <td class="text-right">{{price}}</td>
-            </tr>
-            {{/each}}
-            </tbody>
-        </table>
+        <div class="container shopping-cart">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>{{cartItems.length}} items to buy</th>
+                            <th class="text-right" style="width: 30px">Price</th>
+                            <th class="text-right" style="width: 30px">Quantity</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#each cartItems}}
+                        <tr>
+                            <td>
+                                <img class="img-responsive" src="images/imac.png" alt="...">
+                                <div class="item">
+                                    {{name}}<p>{{description}}</p>
+                                </div>
+                            </td>
+                            <td class="text-right">{{price}}</td>
+                            <td class="text-right"><input type="number" name="pcs" value="{{quantity}}" class="form-control"/></td>
+                        </tr>
+                        {{/each}}
+                        </tbody>
+                    </table>
+                    <ul class="text-right checkout">
+                        <li><strong>Total Price</strong>: $599</li>
+                        <li><strong>Shipping</strong>: Free</li>
+                    </ul>
+                </div>
+            </div> <!-- / .row -->
+        </div>
     </div>
-
     <div class="panel-footer text-right">
         <button {{action 'inventorysearch' }}  class="btn btn-default">Shop More</button>
         <button {{action 'checkout' this }}  class="btn btn-primary">Checkout</button>
