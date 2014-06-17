@@ -17,13 +17,13 @@
                         {{#each cartItems}}
                         <tr>
                             <td>
-                                <img class="img-responsive" src="images/imac.png" alt="...">
+                                <img {{bindAttr src="imageURL"}} class="img-responsive main" ></img>
                                 <div class="item">
                                     {{name}}<p>{{description}}</p>
                                 </div>
                             </td>
                             <td class="text-right">{{price}}</td>
-                            <td class="text-right"><input type="number" name="pcs" value="{{quantity}}" class="form-control"/></td>
+                            <td class="text-right">{{input type="text" value=quantity class="form-control" }}</td>
                         </tr>
                         {{/each}}
                         </tbody>

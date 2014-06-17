@@ -18,7 +18,8 @@ App.InventorysearchController = Ember.ArrayController.extend({
                 id:item.get('id'),
                 name:item.get('name'),
                 quantity:item.get('id'),
-                price:item.get('price')
+                price:item.get('price'),
+                imageURL:item.get('imageURL')
             });
         },
 

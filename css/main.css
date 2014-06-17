@@ -86,8 +86,8 @@ h2 {
 /*Use for showing the short details for the product on the search panel*/
 
 .panel-product{
-    min-height: 300px;
-    max-height: 300px
+    min-height: 250px;
+    max-height: 250px
 }
 
 .table-bordered th,

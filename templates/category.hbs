@@ -1,0 +1,10 @@
+<ul class="list-group">
+    {{#each categories}}
+    <li class="list-group-item">
+        {{#link-to 'inventorysearch' name}}
+        {{name}}
+        {{/link-to}}
+        <span class="badge text-right">{{count}}</span>
+    </li>
+    {{/each}}
+</ul>

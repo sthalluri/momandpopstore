@@ -1,23 +1,21 @@
 <ul class="breadcrumb" style="margin-bottom: 5px;">
     <li><a href="#">Wine</a></li>
-    <li><a href="#">Red Wine</a></li>
-    <li class="active">Merlot</li>
+    <li><a href="#">{{category}}</a></li>
+    <li class="active">{{name}}</li>
 </ul>
 
 <div class="panel panel-default">
     <div class="panel-body">
-        <p>{{description}}</p>
 
         <div class="wrapper">
-
         <div class="container shop-item">
         <div class="row">
         <div class="col-sm-12">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="product-img">
-                        <a href="images/macbook.png" data-lightbox="products">
-                            <img src="images/macbook.png" class="img-responsive main" alt="...">
+                        <a href="{{imageURL}}" data-lightbox="products">
+                            <img {{bindAttr src="imageURL"}} class="img-responsive main" ></img>
                         </a>
                         <div class="row">
                             <div class="col-xs-4">
@@ -49,11 +47,11 @@
                     </ul>
                     <span class="text-muted reviews">(12 reviews)</span>
                     <p class="text-muted">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id ipsum varius, tincidunt odio nec, placerat enim.
+                        {{description}}
                     </p>
                     <div>
                         <div class="price-block">
-                            <span class="price">US $99,99 x</span>
+                            <span class="price">US ${{price}}</span>
                             <input type="number" name="pcs" value="1" class="form-control">
                         </div>
                     </div>
