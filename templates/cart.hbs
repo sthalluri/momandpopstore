@@ -8,29 +8,28 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th>{{cartItems.length}} items to buy</th>
-                            <th class="text-right" style="width: 30px">Price</th>
+                            <th class="text-left" ></th>
+                            <th class="text-right" style="width: 90px">Unit Cost</th>
                             <th class="text-right" style="width: 30px">Quantity</th>
+                            <th class="text-right" style="width: 30px">Cost</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {{#each cartItems}}
+                        {{#each model}}
                         <tr>
                             <td>
                                 <img {{bindAttr src="imageURL"}} class="img-responsive main" ></img>
-                                <div class="item">
-                                    {{name}}<p>{{description}}</p>
-                                </div>
+                                {{name}}<p>{{description}}</p>
                             </td>
-                            <td class="text-right">{{price}}</td>
+                            <td class="text-right">{{money price}}</td>
                             <td class="text-right">{{input type="text" value=quantity class="form-control" }}</td>
+                            <td class="text-right">{{money totalCost}}</td>
                         </tr>
                         {{/each}}
                         </tbody>
                     </table>
                     <ul class="text-right checkout">
-                        <li><strong>Total Price</strong>: $599</li>
-                        <li><strong>Shipping</strong>: Free</li>
+                        <li><strong>Total Price</strong>: $<span id="totalCostSpan">0</span></li>
                     </ul>
                 </div>
             </div> <!-- / .row -->

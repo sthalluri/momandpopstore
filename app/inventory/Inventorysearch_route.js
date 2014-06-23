@@ -5,6 +5,22 @@ App.InventorysearchRoute = Ember.Route.extend({
         return inventory;
     },
 
+//    the initial value of the `search` property
+//    setupController:function (controller, inventoryitem) {
+//        console.log('In the setup ' + inventoryitem);
+//        controller.set('model', inventoryitem);
+//    },
+
+    setupController:function (controller, items) {
+        controller.set('model', items);
+
+        controller.set('categoryItems',[
+            {name:'Wines', count: 20},
+            {name:'Soda', count: 20},
+            {name:'Beer', count: 10}
+        ]);
+    },
+
     // Example to specify multiple outlets
     // Specify the {{outlet samplesection}} to render the template sample in inventorysearch template with outlet of samplesection
     renderTemplate: function() {
@@ -17,5 +33,4 @@ App.InventorysearchRoute = Ember.Route.extend({
             controller : 'category'
         });
     }
-
 });

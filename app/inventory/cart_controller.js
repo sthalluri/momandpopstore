@@ -1,15 +1,6 @@
 App.CartController = Ember.ArrayController.extend({
     // the initial value of the `search` property
-    cartItems:[],
     actions:{
-        addToCart:function (item) {
-            this.cartItems.push({
-                id:item.get('id'),
-                name:item.get('name'),
-                imageURL:item.get('imageURL')
-            });
-        },
-
         removeFromCart:function (id) {
             this.cartItems.pop();
         },
@@ -24,20 +15,18 @@ App.CartController = Ember.ArrayController.extend({
     },
 
     addItemToCart:function (item) {
-        for(var i=0; i< this.cartItems.length; i++){
-            if(this.cartItems[i].id === item.id){
-                this.cartItems[i].quantity +=1;
-                return;
-            }
+        var cartItem = this.store.getById('cartitem',item.id);
+        if(cartItem){
+            cartItem.set('quantity', cartItem.get('quantity')+1);
+        } else{
+            this.store.push('cartitem',{
+                id:item.id,
+                name:item.name,
+                quantity:1,
+                price:item.price,
+                imageURL:item.imageURL
+            } );
         }
-
-        this.cartItems.push({
-            id:item.id,
-            name:item.name,
-            quantity:1,
-            price:item.price,
-            imageURL:item.imageURL
-        });
         this.cartUpdated();
     },
 
@@ -48,6 +37,19 @@ App.CartController = Ember.ArrayController.extend({
     },
 
     cartUpdated:function () {
-        $('#cartCountSpan').text(this.cartItems.length);
-    }
+        this.store.find('cartitem').then(function(items) {
+            $('#cartCountSpan').text(items.get('length'));
+        });
+    },
+
+    totalCost:function(){
+        this.store.find('cartitem').then(function(items) {
+            var value = 0;
+            items.forEach(function(item){
+                 value += item.get('quantity')*item.get('price');
+            });
+            $('#totalCostSpan').text(value);
+        });
+        return 0;
+    }.property('@each.quantity')
 });

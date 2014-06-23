@@ -14,7 +14,16 @@
                 </div>
             </div>
         </div>
-        {{outlet categorysection}}
+        <ul class="list-group">
+            {{#each categoryItems}}
+            <li class="list-group-item">
+                {{#link-to 'inventorysearch' name}}
+                {{name}}
+                {{/link-to}}
+                <span class="badge text-right">{{count}}</span>
+            </li>
+            {{/each}}
+        </ul>
     </div>
     <div class="col-lg-8">
         <div class="row">

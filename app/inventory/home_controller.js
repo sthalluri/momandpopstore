@@ -3,7 +3,6 @@ App.HomeController = Ember.ArrayController.extend({
     search:'',
     actions:{
         query:function () {
-
             // the current value of the text field
             var query = this.get('search');
             console.log(query);
